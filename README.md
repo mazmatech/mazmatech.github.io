@@ -1,2 +1,2 @@
-# mazmatech.github.io
+# mazmatech
 MAZMA | Technologies
