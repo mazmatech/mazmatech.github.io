@@ -78,15 +78,16 @@ section {
   color: var(--color-primary);
 }
 
-.section-header h2:before,
-.section-header h2:after {
-  content: "";
-  width: 50px;
-  height: 2px;
-  background: var(--color-secondary2);
-  display: inline-block;
+@media (min-width: 430px) {
+  .section-header h2:before,
+  .section-header h2:after {
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: var(--color-secondary2);
+    display: inline-block;
+  }
 }
-
 .section-header h2:before {
   margin: 0 15px 10px 0;
 }
