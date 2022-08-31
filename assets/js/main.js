@@ -211,3 +211,116 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
+
+am5.ready(function() {
+
+// Data
+  var groupData = [
+    {
+      "data": [
+        { "id": "MA", "address": "122 Bd d'Anfa, ","city": "Casablanca"},
+        { "id": "EH", "address": "122 Bd d'Anfa, ","city": "Casablanca"},
+        { "id": "SN", "address": "3 RUE BERENGER FÉRAUD, ","city": "Dakar"},
+        { "id": "TN", "address": "1, IMM TAMAYOUZ, ","city": "Tunis"},
+        { "id": "AE", "address": "PLAZA TOWER 1, LEVEL 17, ","city": "Dubai"},
+        { "id": "SA", "address": "EXT 6, ABU BAKER STREET, ","city": "Riyadh"},
+        { "id": "FR", "address": "31, AVENUE DE SÉGUR, ","city": "Paris"}]}];
+
+
+// Create root and chart
+  var root = am5.Root.new("chartdiv");
+
+
+// Set themes
+  root.setThemes([
+    am5themes_Animated.new(root)
+  ]);
+
+
+// Create chart
+  var chart = root.container.children.push(am5map.MapChart.new(root, {
+    homeZoomLevel: 4,
+    homeGeoPoint: { longitude: 17, latitude: 35 },
+    wheelX: "none",
+    wheelY: "none",
+    panX: "none",
+    panY: "none"
+  }));
+
+
+
+// Create world polygon series
+  var worldSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+    geoJSON: am5geodata_worldLow,
+    exclude: ["AQ"]
+  }));
+
+  worldSeries.mapPolygons.template.setAll({
+    fill: am5.color(0xaaaaaa),
+    stroke: "#aaaaaa"
+  });
+
+  worldSeries.events.on("datavalidated", () => {
+    chart.goHome();
+  });
+
+
+
+
+// Create series for each group
+  var colors = am5.ColorSet.new(root, {
+    step: 2
+  });
+  colors.next();
+
+  am5.array.each(groupData, function(group) {
+    var countries = [];
+    var color = colors.next();
+
+    am5.array.each(group.data, function(country) {
+      if(country.id === "EH"){
+        country.name = "Morocco";
+      }
+      countries.push(country.id)
+    });
+
+    var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+      geoJSON: am5geodata_worldLow,
+      include: countries,
+      name: group.name,
+      fill: color,
+      stroke: color
+    }));
+
+    polygonSeries.mapPolygons.template.setAll({
+      tooltipText: "[bold]{name}[/]\n{address}[bold]{city}",
+      interactive: true,
+      fill: color,
+      strokeWidth: 2
+    });
+
+    polygonSeries.mapPolygons.template.states.create("hover", {
+      fill: am5.Color.brighten(color, -0.3),
+      stroke: am5.Color.brighten(color, -0.3)
+    });
+
+    polygonSeries.mapPolygons.template.events.on("pointerover", function(ev) {
+      ev.target.series.mapPolygons.each(function(polygon) {
+        polygon.states.applyAnimate("hover");
+      });
+    });
+
+    polygonSeries.mapPolygons.template.events.on("pointerout", function(ev) {
+      ev.target.series.mapPolygons.each(function(polygon) {
+        polygon.states.applyAnimate("default");
+      });
+    });
+    polygonSeries.data.setAll(group.data);
+
+
+}); // end am5.ready()
+
+
+}); // end am5.ready()
+
