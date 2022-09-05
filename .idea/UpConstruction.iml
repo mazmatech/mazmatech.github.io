@@ -15,5 +15,6 @@
     <orderEntry type="library" name="ES" level="application" />
     <orderEntry type="library" name="maps" level="application" />
     <orderEntry type="library" name="core" level="application" />
+    <orderEntry type="library" name="normalize" level="application" />
   </component>
 </module>
