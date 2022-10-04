@@ -30,6 +30,7 @@
   <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
+
 </head>
 
 <body>
@@ -76,7 +77,10 @@
   <section id="contact" class="contact">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
       <div class="row gy-4 mt-1">
-
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Thanks for contacting us! </strong>We appreciate your message, we'll reach you out as soon as possible.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
         <div class="col-lg-6 col-md-6">
           <div class="info-item d-flex flex-column justify-content-center align-items-center" style="padding-bottom: 74px">
             <i class="bi bi-envelope"  style="border-radius: 50%; border: 1px dotted #A3C218"></i>
@@ -91,9 +95,9 @@
             <h3>Social Media</h3>
             <div class="social-links d-flex mt-3">
               <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
-              <a href="https://web.facebook.com/profile.php?id=100084428460659" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
               <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
-              <a href="https://www.linkedin.com/company/mazma/" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-linkedin"></i></a>
             </div>
 
           </div>
@@ -156,19 +160,21 @@
 
       </div>
 
-      <div class="row gy-4 mt-1">
-        <div class="col-lg-8 col-md-12">
-          <div class="col-lg-12 col-md-12">
-            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
-              <i class="bi bi-map" style="border-radius: 50%; border: 1px dotted #A3C218"></i>
-              <h3>MAZMA Worldwide</h3>
-              <p style="white-space: pre"><br></p>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-8 col-md-12">
+            <div class="col-lg-12 col-md-12">
+              <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+                <i class="bi bi-map" style="border-radius: 50%; border: 1px dotted #A3C218"></i>
+                <h3>MAZMA Worldwide</h3>
+                <p style="white-space: pre"><br></p>
+              </div>
+            </div><!-- End Info Item -->
+            <div class="map">
+              <img src="mazma-worldwide.svg" class="img-fluid">
             </div>
-          </div><!-- End Info Item -->
-          <div class="map">
-            <img src="mazma-worldwide.svg" class="img-fluid">
           </div>
-        </div>
+
 
         <div class="col-lg-4 col-md-12">
           <div class="col-lg-12 col-md-12">
@@ -200,7 +206,7 @@
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
               <div class="g-recaptcha" data-sitekey="6LfiXTwiAAAAACldFB8tOfJPHBjdxh9APklnia1-" style="margin-bottom: 20px"></div>
-              <div class="text-center"><button type="submit" name="submit">Send Message</button></div>
+              <div class="text-center"><button name="submit" type="submit" onclick="message()">Send Message</button></div>
             </form>
 
           </div>
@@ -209,18 +215,9 @@
       </div>
     </div>
   </section><!-- End Contact Section -->
-  <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/map.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/geodata/worldLow.js"></script>
-  <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-
   <!-- Styles -->
 
 
-  <!-- Resources -->
-  <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/maps.js"></script>
-  <script src="https://cdn.amcharts.com/lib/4/geodata/worldLow.js"></script>
 
 </main><!-- End #main -->
 

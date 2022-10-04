@@ -16,5 +16,6 @@
     <orderEntry type="library" name="maps" level="application" />
     <orderEntry type="library" name="core" level="application" />
     <orderEntry type="library" name="normalize" level="application" />
+    <orderEntry type="library" name="api" level="application" />
   </component>
 </module>
