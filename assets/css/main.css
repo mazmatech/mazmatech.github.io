@@ -265,7 +265,11 @@ section {
   background: #F5F6F7;
 }
 
-
+@media (max-width: 750px){
+  .header{
+    padding: 10px 0;
+  }
+}
 
 .header .logo img {
   max-height: 40px;
