@@ -267,7 +267,7 @@ section {
 
 @media (max-width: 750px){
   .header{
-    padding: 10px 0;
+    padding: 20px 0;
   }
 }
 
@@ -1945,6 +1945,12 @@ section {
   background: -webkit-linear-gradient(var(--color-secondary2), var(--color-primary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 750px) {
+  .hero .info h2 {
+    margin-top: 10px;
+  }
 }
 
 .hero .info h2:after {
