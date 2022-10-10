@@ -2840,22 +2840,22 @@ i.flag:before, i.flag:not(.icon) {
 }
 
 .article:nth-child(1){
-  background-image:url("/assets/img/platform/service2.png");
+  background-image: url("/assets/img/platform/service2.png");
 }
 
 .article:nth-child(2){
-  background-image:url("/assets/img/platform/service1.png");
+  background-image: url("/assets/img/platform/service1.png");
 }
 .article:nth-child(3){
-  background-image:url("/assets/img/platform/service3.png");
+  background-image: url("/assets/img/platform/service3.png");
 }
 
 .article:nth-child(4){
-  background-image:url("/assets/img/platform/service4.png");
+  background-image: url("/assets/img/platform/service4.png");
 }
 
 .article:nth-child(5){
-  background-image:url("/assets/img/platform/service5.png");
+  background-image: url("/assets/img/platform/service5.png");
 }
 
 
