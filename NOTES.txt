@@ -1,0 +1,2 @@
+** POUR GARDER LE CONTROLE SUR LA CAPTCHA
+Il faut remplacer les deux keys du captcha avec les vôtres (dans le variable $secret (contact.php) et dans les fichiers contact.html (ligne 202) et contact-success.html (ligne 208))
